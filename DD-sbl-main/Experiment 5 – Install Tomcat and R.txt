@@ -1,0 +1,33 @@
+Experiment 5 – Install Tomcat and Run Jenkins Using WAR File
+Steps
+
+1.Download Apache Tomcat
+
+ -(__https://tomcat.apache.org/download-90.cgi__)
+
+ -Extract to C:\Tomcat9
+
+2.Verify Tomcat
+
+ -Run:
+CODE----------------------------------------------------------
+C:\Tomcat9\bin\startup.bat
+-Visit (__http://localhost:8080__)
+
+3.Deploy Jenkins WAR
+
+ -Download jenkins.war from (__https://www.jenkins.io/download/__)
+
+ -Copy it to (__C:\Tomcat9\webapps\__)
+
+ -Restart Tomcat:
+CODE------------------------------------------------------------
+C:\Tomcat9\bin\shutdown.bat
+C:\Tomcat9\bin\startup.bat
+ -Access Jenkins at (__http://localhost:8080/jenkins__)
+
+4.Unlock and Configure Jenkins (same as Exp 3)
+
+Deliverable
+
+Screenshot of Jenkins running under Tomcat (URL shows /jenkins).

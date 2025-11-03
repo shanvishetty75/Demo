@@ -1,0 +1,51 @@
+Experiment 4 – Create a Declarative Jenkins Pipeline
+Steps
+
+1.Create Jenkinsfile in your local repo
+  Save this file as Jenkinsfile:
+CODE--------------------------------------------------------------------
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}
+
+
+2.Create New Pipeline Job in Jenkins
+
+-Dashboard → New Item → name: DemoPipeline
+
+-Select Pipeline → OK
+
+-Scroll to Pipeline section → choose Pipeline script from SCM
+
+-SCM = Git → enter your repo URL (and credentials if private)
+
+3.Run Pipeline
+-Click Build Now
+
+-View results in Stage View
+
+
+Deliverable
+
+Screenshot of pipeline with “Build”, “Test”, “Deploy” stages completed.
+
+
+
+

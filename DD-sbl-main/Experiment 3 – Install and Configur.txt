@@ -1,0 +1,37 @@
+Experiment 3 – Install and Configure Jenkins on Windows
+Steps
+
+1.Install Java
+
+ Download JDK (LTS, version 17 recommended): (__https://adoptium.net__)
+
+ Set environment variable JAVA_HOME
+
+ Verify:
+CODE-------------------------------------------------------------------
+java -version
+
+2.Install Jenkins
+-Download Windows Installer: https://www.jenkins.io/download/
+-Run installer → accept defaults → Jenkins runs as a Windows service.
+
+3.Unlock Jenkins
+-Open browser: http://localhost:8080
+-Get admin password:
+CODE-------------------------------------------------------------------
+C:\Program Files\Jenkins\secrets\initialAdminPassword
+-Paste into the unlock page.
+
+4.Install Plugins
+-Click “Install Suggested Plugins”.
+
+5.Create Admin User and Save Configuration
+-Follow setup wizard to finish installation.
+
+6.Verify Installation
+-Open Jenkins dashboard at http://localhost:8080
+
+Deliverable
+
+Screenshot of Jenkins dashboard showing a successful installation.
+

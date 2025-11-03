@@ -1,0 +1,47 @@
+Experiment 1 — Git installation & basic commands (quick lab steps)
+
+1.Install Git
+
+Go to (__https://gitforwindows.org__)
+
+Download and install Git → keep defaults.
+
+Verify installation:
+CODE--------------------------------------------------------
+git --version
+
+2.Set your username and email
+CODE--------------------------------------------------------
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git config --list
+
+3.Initialize a local repository
+CODE--------------------------------------------------------
+mkdir DemoRepo
+cd DemoRepo
+git init
+
+4.Create and commit a file
+CODE--------------------------------------------------------
+echo Hello World > hello.txt
+git add hello.txt
+git commit -m "Initial commit"
+
+5.Branching and merging
+CODE--------------------------------------------------------
+git checkout -b test-branch
+echo New changes > file.txt
+git add file.txt
+git commit -m "Added file.txt"
+git checkout main
+git merge test-branch
+
+6.View history
+CODE--------------------------------------------------------
+git log --oneline --graph
+
+Deliverable
+Screenshot showing:
+-git config --list
+-Successful merge (git log --oneline --graph)

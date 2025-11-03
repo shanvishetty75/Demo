@@ -1,0 +1,49 @@
+Experiment 6 – Integrate Selenium Test Case in Jenkins
+Steps
+1.Install Python & Selenium
+CODE-------------------------------------------------------
+python -m venv venv
+venv\Scripts\activate
+pip install selenium pytest
+
+2.Download ChromeDriver
+ -https://chromedriver.chromium.org/downloads
+
+ -Ensure it matches your Chrome version.
+
+ -Place it in your project folder, e.g., (__C:\SeleniumTest\chromedriver.exe__)
+
+3.Create Test File test_google.py
+CODE--------------------------------------------------------
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+def test_google_search():
+    driver = webdriver.Chrome(executable_path="C:\\SeleniumTest\\chromedriver.exe")
+    driver.get("https://www.google.com")
+    box = driver.find_element("name", "q")
+    box.send_keys("Jenkins")
+    box.send_keys(Keys.ENTER)
+    time.sleep(2)
+    driver.quit()
+
+
+4.Run Test Locally
+CODE--------------------------------------------------------
+pytest -q
+
+5.Create Jenkins Job
+-In Jenkins → New Item → Freestyle Project
+
+-Add build step → Execute Windows Batch Command
+CODE---------------------------------------------------------
+call venv\Scripts\activate
+pip install selenium pytest
+pytest -q
+
+ -Save and Build Now
+
+Deliverable
+
+Screenshot showing Jenkins console output with successful Selenium test run.
